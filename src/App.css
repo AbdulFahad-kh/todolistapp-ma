@@ -1,0 +1,209 @@
+/* Root Variables for Consistency and Easy Updates */
+:root {
+  --primary-color: #15adbb;
+  --secondary-color: #2b2435;
+  --highlight-color: #20d94b;
+  --highlight-hover: #119d0f;
+  --text-color: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --item-bg: #433951;
+  --item-shadow: rgba(0, 0, 0, 0.3);
+  --error-color: #ff4b4b;
+  --font-family: 'Arial', sans-serif;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+/* To-Do Wrapper */
+.todo-wrapper {
+  padding: 2rem;
+  background: var(--secondary-color);
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh;
+  margin: 3rem auto;
+  overflow-y: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px var(--item-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Input Section */
+.todo-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 1.5rem;
+}
+
+.todo-input-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo-input-item label {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.todo-input-item input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-input-item input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Buttons */
+.primary-btn {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.primary-btn:hover {
+  background-color: var(--highlight-hover);
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background-color: rgba(128, 128, 128, 0.9);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+}
+
+/* To-Do List */
+.todolist {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.todo-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--item-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--item-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-list-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px var(--item-shadow);
+}
+
+.todo-list-item h3 {
+  font-size: 1.5rem;
+  color: #57ac60;
+  margin: 0;
+}
+
+.todo-list-item p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Icons */
+.icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icon:hover {
+  color: var(--error-color);
+  transform: scale(1.2);
+}
+
+.check-icon {
+  cursor: pointer;
+  color: #16d916;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.check-icon:hover {
+  color: #0fa10f;
+  transform: scale(1.2);
+}
+
+/* Edit Wrapper */
+.edit-wrapper {
+  background-color: var(--item-bg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 1rem;
+}
+
+.edit-wrapper input,
+.edit-wrapper textarea {
+  border: 1px solid lightgray;
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.edit-wrapper input:focus,
+.edit-wrapper textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.edit-wrapper .primary-btn {
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+}
